@@ -3,8 +3,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 import anthropic
 
-TELEGRAM_TOKEN = "PEGA_TU_TOKEN_AQUÍ"
-ANTHROPIC_API_KEY = "PEGA_TU_API_KEY_AQUÍ"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 logging.basicConfig(level=logging.INFO)
